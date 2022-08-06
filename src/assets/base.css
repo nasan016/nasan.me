@@ -1,0 +1,31 @@
+body, html{
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+   box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'PPNeueMontreal';
+  src: url(font/PPNeueMontreal-Thin.otf);
+  font-style: normal;
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'PPNeueMontreal';
+  src: url(font/PPNeueMontreal-Medium.otf);
+  font-style: normal;
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'PPNeueMontreal';
+  src: url(font/PPNeueMontreal-Bold.otf);
+  font-style: normal;
+  font-weight: 300;
+}
