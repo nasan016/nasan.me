@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import { ref } from "vue"
+import { selectedLink } from "./linkTracker";
 
 const navTitles = [
     "Home",
     "Projects",
-    "Contact"
+    "Contact",
 ]
-
-const selectedLink = ref('Home')
 
 function toggle (item: string){
     if(item==="✿"){
@@ -26,7 +25,11 @@ function toggle (item: string){
         <div class="alignitems" :key="item">
             <transition name="fade" mode="out-in">
                 <div v-if="selectedLink===item" class="dot">✿</div>
-                <div v-else class="notdot" :key="item" @click="toggle(item)">{{item}}</div>
+                <div v-else class="notdot">
+                <router-link :to="`/${item}`">
+                <div @click="toggle(item)">{{item}}</div>
+                </router-link>
+                </div>
             </transition>
             </div>
     </div>
@@ -46,7 +49,6 @@ function toggle (item: string){
     height: 40px;
     line-height: 40px;
 }
-
 .notdot{
     cursor: pointer;
     transition: all 0.25s ease;
@@ -63,6 +65,17 @@ function toggle (item: string){
 .dot {
     font-size: 20px;
 }
+
+@media only screen and (max-width: 800px) {
+    .dot {
+        font-size: 16px;
+    }
+
+    .navtitles{
+        font-size: 14px;
+    }
+}
+
 
 .fade-enter-active,
 .fade-leave-active {

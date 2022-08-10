@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import NameTitle from "./components/NameTitle.vue";
 import NavigationLinks from "./components/NavigationLinks.vue";
+import { selectedLink } from "./components/linkTracker";
+import {ref, onMounted } from 'vue'
 
+onMounted(() => {
+  selectedLink.value = "Home"
+})
 </script>
 
 <template>
@@ -32,10 +37,15 @@ import NavigationLinks from "./components/NavigationLinks.vue";
       <NameTitle name="Nathaniel Macapinlac" title="Software Engineer"/>
       <div class="navbar">
         <NavigationLinks/>
-      </div>
     </div>
-  </div>
-  <div>
+    </div>
+    <div class="leftSide">
+      <router-view v-slot="{Component}">
+    <transition name="slide-fade" mode="out-in">
+      <component :is="Component"/>
+    </transition>
+    </router-view>
+    </div>
   </div>
 </div>
 
@@ -46,21 +56,52 @@ import NavigationLinks from "./components/NavigationLinks.vue";
   height: 100vh;
   width: 100%;
   padding: 40px;
-  overflow: auto;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+.slide-fade-leave-active {
+  transition: all 0.3s ease-out;
+}
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
 }
 
 .content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   border: solid 1px;
   padding: 36px;
   height: 100%;
   position: relative;
 }
 
-.rightSide{
-  width: 540px;
+.leftSide{
+  display: flex;
+  align-items: flex-end;
 }
+
 .navbar{
   padding-top: 60px;
+}
+
+@media only screen and (max-width: 800px) {
+  .content{
+    padding: 10px;
+    position: relative;
+  }
+
+  .main{
+  padding: 10px;
+  }
+
+  .navbar{
+    padding-top: 30px;
+  }
 }
 
 @keyframes move {

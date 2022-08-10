@@ -23,4 +23,14 @@ const props = defineProps({
     user-select: none;
     font-weight: 200;
 }
+
+@media only screen and (max-width: 800px) {
+    .title{
+        font-size: 14px;
+    }
+
+    .name{
+        font-size: 34px;
+    }
+}
 </style>
