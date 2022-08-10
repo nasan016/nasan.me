@@ -2,6 +2,23 @@ body, html{
   margin: 0;
   padding: 0;
 }
+
+html {
+  height: fill-availbale;
+  height: -webkit-fill-available;
+  min-height: 100vh;
+  min-height: -moz-available;
+  min-height: fill-available;
+  min-height: -webkit-fill-available;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -moz-available;
+  min-height: fill-available;
+  min-height: -webkit-fill-available;
+}
+
 * {
   box-sizing: border-box;
   -moz-box-sizing: border-box; 

@@ -53,8 +53,8 @@ onMounted(() => {
 
 <style>
 .main{
-  height: 100vh;
-  width: 100%;
+  height: 100%;
+  width: 100vw;
   padding: 40px;
 }
 
@@ -116,9 +116,8 @@ onMounted(() => {
 }
 
 .background {
-    position: fixed;
+  position: absolute;
     width: 100vw;
-    height: 100vh;
     top: 0;
     left: 0;
     background: #f4f4f4;
