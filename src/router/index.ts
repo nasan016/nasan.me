@@ -3,6 +3,7 @@ import  Home  from '../views/Home.vue'
 import Projects from '../views/Projects.vue'
 import Contact from '../views/Contact.vue'
 const router = createRouter({
+  mode: 'hash',
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
