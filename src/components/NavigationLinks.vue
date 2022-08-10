@@ -10,7 +10,7 @@ const navTitles = [
 const selectedLink = ref('Home')
 
 function toggle (item: string){
-    if(item==="●"){
+    if(item==="✿"){
 
     }
     else{
@@ -22,11 +22,11 @@ function toggle (item: string){
 
 <template>
 <div class="navtitles">
-    <div class="individualTitles" v-for="item in navTitles" :key="item" @click="toggle(item)">
+    <div class="individualTitles" v-for="item in navTitles" :key="item">
         <div class="alignitems" :key="item">
             <transition name="fade" mode="out-in">
-                <div v-if="selectedLink===item" class="dot">●</div>
-                <div v-else>{{item}}</div>
+                <div v-if="selectedLink===item" class="dot">✿</div>
+                <div v-else class="notdot" :key="item" @click="toggle(item)">{{item}}</div>
             </transition>
             </div>
     </div>
@@ -41,11 +41,18 @@ function toggle (item: string){
 
 .individualTitles{
     padding-bottom: 16px;
-    cursor: pointer;
     user-select: none;
     width: 100px;
     height: 40px;
     line-height: 40px;
+}
+
+.notdot{
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.notdot:hover{
+        color: #d4367563;
 }
 
 .alignitems{
@@ -54,7 +61,7 @@ function toggle (item: string){
 }
 
 .dot {
-    font-size: 10px;
+    font-size: 20px;
 }
 
 .fade-enter-active,
