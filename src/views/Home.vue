@@ -36,7 +36,7 @@ onMounted(() => {
 <style scoped>
 .homeContent{
     line-height: 1.6;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 @media only screen and (max-width: 800px) {

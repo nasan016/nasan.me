@@ -26,7 +26,7 @@ function toggle (item: string){
             <transition name="fade" mode="out-in">
                 <div v-if="selectedLink===item" class="dot">✿</div>
                 <div v-else class="notdot">
-                <router-link :to="`/${item}`">
+                <router-link :to="item === 'Home' ? '/' :`/${item}`">
                 <div @click="toggle(item)">{{item}}</div>
                 </router-link>
                 </div>
@@ -85,5 +85,6 @@ function toggle (item: string){
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+  -webkit-opacity: 0;
 }
 </style>

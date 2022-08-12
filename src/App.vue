@@ -3,10 +3,6 @@ import NameTitle from "./components/NameTitle.vue";
 import NavigationLinks from "./components/NavigationLinks.vue";
 import { selectedLink } from "./components/linkTracker";
 import {ref, onMounted } from 'vue'
-
-onMounted(() => {
-  selectedLink.value = "Home"
-})
 </script>
 
 <template>
@@ -67,6 +63,8 @@ onMounted(() => {
 .slide-fade-enter-from,
 .slide-fade-leave-to {
   transform: translateX(20px);
+  -webkit-transform: translateX(20px);
+  -webkit-opacity: 0;
   opacity: 0;
 }
 
