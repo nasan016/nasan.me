@@ -3,31 +3,14 @@ import NameTitle from "./components/NameTitle.vue";
 import NavigationLinks from "./components/NavigationLinks.vue";
 import { selectedLink } from "./components/linkTracker";
 import {ref, onMounted } from 'vue'
+
+const circles = ref(20)
 </script>
 
 <template>
 
 <div class="main background">
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
+  <span v-for="(circle,  index) in circles" :key="index"/>
   <div class="content">
     <div class="rightSide">
       <NameTitle name="Nathaniel Macapinlac" title="Software Engineer"/>
@@ -52,20 +35,6 @@ import {ref, onMounted } from 'vue'
   height: 100%;
   width: 100vw;
   padding: 40px;
-}
-
-.slide-fade-enter-active {
-  transition: all 0.3s ease-out;
-}
-.slide-fade-leave-active {
-  transition: all 0.3s ease-out;
-}
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  transform: translateX(20px);
-  -webkit-transform: translateX(20px);
-  -webkit-opacity: 0;
-  opacity: 0;
 }
 
 .content{
@@ -100,6 +69,20 @@ import {ref, onMounted } from 'vue'
   .navbar{
     padding-top: 30px;
   }
+}
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+.slide-fade-leave-active {
+  transition: all 0.3s ease-out;
+}
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  -webkit-transform: translateX(20px);
+  -webkit-opacity: 0;
+  opacity: 0;
 }
 
 @keyframes move {
