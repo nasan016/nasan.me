@@ -4,7 +4,7 @@ import { selectedLink } from '../components/linkTracker'
 import  ProjectTitle  from '../components/ProjectTitle.vue'
 
 const nasandev = () =>{
-    window.open("https://nasan.dev/", "_blank",)
+    window.open("https://nasan016.github.io/nasanterminal/", "_blank",)
 }
 
 onMounted(() => {
